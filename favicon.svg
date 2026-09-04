@@ -6,6 +6,6 @@
   </defs>
   <g clip-path="url(#circleClip)">
     <rect width="128" height="128" fill="#000000" />
-    <image href="/logo.png" width="128" height="128" preserveAspectRatio="xMidYMid slice" />
+    <image href="logo.png" width="128" height="128" preserveAspectRatio="xMidYMid slice" />
   </g>
 </svg>
