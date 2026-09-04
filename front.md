@@ -597,6 +597,14 @@
   - Pushed codebase to GitHub repository `origin/main`.
   - Updated prompt log register in [`front.md`](file:///d:/sthack/front.md).
 
+### Prompt #43 (Fixing GitHub Pages White Blank Page Issue)
+- **User Request:** There is an issue i can only see white page in my live page from github.
+- **Action Taken:**
+  - **Identified Root Cause:** Vite defaults to absolute domain root asset paths (`/assets/...`). When deployed under a GitHub Pages subpath (`https://shiva-prasad-ai.github.io/code-impulse/`), absolute paths fail with 404, preventing script bundles from loading and resulting in a blank white page.
+  - **Vite Config Fix:** Added `base: './'` to [`vite.config.js`](file:///d:/sthack/vite.config.js) so all script and stylesheet tags render relative paths (`./assets/index-xxxx.js`).
+  - **Automated Deployment Workflow:** Created `.github/workflows/deploy.yml` to automatically build Vite, create a SPA fallback (`dist/404.html`), and deploy to GitHub Pages on every push to `main`.
+  - Updated prompt log register in [`front.md`](file:///d:/sthack/front.md).
+
 ---
 
 ## 📑 Active Tab & Page Map
