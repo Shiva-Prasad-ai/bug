@@ -605,6 +605,14 @@
   - **Automated Deployment Workflow:** Created `.github/workflows/deploy.yml` to automatically build Vite, create a SPA fallback (`dist/404.html`), and deploy to GitHub Pages on every push to `main`.
   - Updated prompt log register in [`front.md`](file:///d:/sthack/front.md).
 
+### Prompt #44 (Published Compiled Production Build to gh-pages Branch)
+- **User Request:** GET https://shiva-prasad-ai.github.io/src/main.jsx net::ERR_ABORTED 404 (Not Found)
+- **Action Taken:**
+  - **Identified Cause:** GitHub Pages was configured to serve raw uncompiled source files from the `main` root folder instead of the compiled production build `dist`.
+  - **gh-pages Integration:** Installed `gh-pages` and added `"deploy": "gh-pages -d dist"` script to [`package.json`](file:///d:/sthack/package.json).
+  - **Published Production Bundle:** Executed `npm run deploy` to compile Vite assets and publish the production build directly to the `gh-pages` branch on GitHub.
+  - Updated prompt log register in [`front.md`](file:///d:/sthack/front.md).
+
 ---
 
 ## 📑 Active Tab & Page Map
