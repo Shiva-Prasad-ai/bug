@@ -3,6 +3,7 @@ import HeroSection from './HeroSection';
 import Threads from './Threads/Threads';
 import Ferrofluid from './Ferrofluid/Ferrofluid';
 import WebThreads from './WebThreads/WebThreads';
+import logoImg from '../assets/logo.png';
 
 export default function PageCanvas({ activeTab, tabs, darkMode }) {
   const currentTab = tabs.find(t => t.id === activeTab) || { id: activeTab, name: activeTab };
@@ -337,7 +338,7 @@ export default function PageCanvas({ activeTab, tabs, darkMode }) {
         <div className={`w-20 h-20 rounded-full overflow-hidden flex items-center justify-center p-2 mb-6 shadow-sm ${
           darkMode ? 'bg-slate-900 border border-slate-800' : 'bg-slate-50 border border-slate-200/80'
         }`}>
-          <img src="/logo.png" alt="sthack logo" className="w-full h-full object-cover rounded-full" />
+          <img src={logoImg} alt="sthack logo" className="w-full h-full object-cover rounded-full" />
         </div>
 
         {/* Heading */}

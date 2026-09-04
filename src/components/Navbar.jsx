@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
+import logoImg from '../assets/logo.png';
 
 function LoginButton({ darkMode, onClick }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -114,7 +115,7 @@ export default function Navbar({ tabs, activeTab, onSelectTab, darkMode, onToggl
             darkMode ? 'bg-slate-900 border border-slate-800 group-hover:border-indigo-500/50' : 'bg-slate-50 border border-slate-200/80 group-hover:border-indigo-200'
           }`}>
             <img 
-              src="/logo.png" 
+              src={logoImg} 
               alt="sthack logo" 
               className="w-full h-full object-cover rounded-full filter group-hover:scale-105 transition-transform" 
             />

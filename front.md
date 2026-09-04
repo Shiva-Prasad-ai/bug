@@ -611,6 +611,13 @@
   - **Identified Cause:** GitHub Pages was configured to serve raw uncompiled source files from the `main` root folder instead of the compiled production build `dist`.
   - **gh-pages Integration:** Installed `gh-pages` and added `"deploy": "gh-pages -d dist"` script to [`package.json`](file:///d:/sthack/package.json).
   - **Published Production Bundle:** Executed `npm run deploy` to compile Vite assets and publish the production build directly to the `gh-pages` branch on GitHub.
+### Prompt #45 (Fixing Broken Logo & Theme Toggle Assets on GitHub Pages Subpaths)
+- **User Request:** i think my logo and the theme toggle button has some problem they are not pushed i think
+- **Action Taken:**
+  - **Identified Cause:** Hardcoded root-relative image paths (`src="/logo.png"`, `href="/logo.png"`) resolve to `https://shiva-prasad-ai.github.io/logo.png` instead of the repo subpath (`https://shiva-prasad-ai.github.io/code-impulse/logo.png`), returning 404 Not Found in live deployment.
+  - **Bundled Asset Import:** Moved logo to `src/assets/logo.png` and imported `logoImg` dynamically in [`Navbar.jsx`](file:///d:/sthack/src/components/Navbar.jsx), [`ThemeToggle.jsx`](file:///d:/sthack/src/components/ThemeToggle.jsx), [`LoginPageModal.jsx`](file:///d:/sthack/src/components/LoginPageModal.jsx), [`HeroSection.jsx`](file:///d:/sthack/src/components/HeroSection.jsx), and [`PageCanvas.jsx`](file:///d:/sthack/src/components/PageCanvas.jsx).
+  - **Favicon Relative Paths:** Updated `index.html` and `public/favicon.svg` to use relative asset links (`href="./favicon.svg"`, `href="logo.png"`).
+  - **Production Redeployment:** Rebuilt and redeployed production build with `npm run deploy` to `gh-pages` branch and pushed updated source code to `origin/main`.
   - Updated prompt log register in [`front.md`](file:///d:/sthack/front.md).
 
 ---

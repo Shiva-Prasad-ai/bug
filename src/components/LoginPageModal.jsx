@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff, X, Check, User, Mail, Lock, ArrowRight } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function LoginPageModal({ isOpen, onClose, darkMode, initialMode = 'login' }) {
   const [mode, setMode] = useState(initialMode); // 'login' | 'signup'
@@ -73,7 +74,7 @@ export default function LoginPageModal({ isOpen, onClose, darkMode, initialMode 
         {/* Circular Avatar Emblem Badge at Top with Perfectly Round Logo */}
         <div className="w-14 h-14 rounded-full bg-[#F4EFE9] border border-white/80 shadow-xs flex items-center justify-center mb-4 overflow-hidden shrink-0">
           <img 
-            src="/logo.png" 
+            src={logoImg} 
             alt="sthack logo" 
             className="w-9 h-9 object-cover rounded-full" 
           />

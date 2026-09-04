@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImg from '../assets/logo.png';
 
 export default function ThemeToggle({ darkMode, onToggleTheme }) {
   return (
@@ -15,7 +16,7 @@ export default function ThemeToggle({ darkMode, onToggleTheme }) {
         <div>
           {/* Custom Eye Emblem Logo image instead of aeroplane icon */}
           <img 
-            src="/logo.png" 
+            src={logoImg} 
             alt="sthack emblem" 
             className="w-[14px] h-[14px] object-contain transition-transform group-hover:scale-110" 
           />

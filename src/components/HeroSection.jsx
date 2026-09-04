@@ -5,6 +5,7 @@ import SpecularButton from './SpecularButton/SpecularButton';
 import Threads from './Threads/Threads';
 import Ferrofluid from './Ferrofluid/Ferrofluid';
 import WebThreads from './WebThreads/WebThreads';
+import logoImg from '../assets/logo.png';
 
 export default function HeroSection({ pageName, darkMode }) {
   const [gpuFailed, setGpuFailed] = useState(false);
@@ -93,11 +94,11 @@ export default function HeroSection({ pageName, darkMode }) {
           <div className="w-full h-full flex justify-between items-center opacity-15 px-12 pointer-events-none">
             <div 
               className={`w-80 h-80 bg-contain bg-center bg-no-repeat scale-125 ${darkMode ? 'filter invert' : ''}`}
-              style={{ backgroundImage: `url('/logo.png')` }}
+              style={{ backgroundImage: `url(${logoImg})` }}
             />
             <div 
               className={`w-80 h-80 bg-contain bg-center bg-no-repeat scale-125 ${darkMode ? 'filter invert' : ''}`}
-              style={{ backgroundImage: `url('/logo.png')` }}
+              style={{ backgroundImage: `url(${logoImg})` }}
             />
           </div>
         )}
